@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">rtl-sdr nohwmod драйвер</string>
+    <string name="help">Помощь</string>
+    <string name="stream">Начать трансляцию</string>
+    <string name="args_hint">аргументы командной строки sdr_tcp</string>
+    <string name="copy">Копировать</string>
+    <string name="copied_to_clip">Вывод скопирован в буфер обмена</string>
+    <string name="clear">Очистить</string>
+    <string name="error">Ошибка</string>
+    <string name="notsupported">Требуемое действие не было выполнено из-за его недоступности</string>
+    <string name="choose_device">Выбор устройства</string>
+    <string name="license">Лицензия</string>
+    <string name="warn_txt">Драйвер успешно установлен! Пожалуйста, запустите хост-приложение, и оно автоматически активирует драйвер.</string>
+    <string name="platform_not_supported">Ваша платформа Android не поддерживается. Свяжитесь с нами, чтобы предоставить дополнительную информацию о вашем устройстве, чтобы мы могли поддерживать его в будущем.</string>
+    <string name="enable_gui">Включить расширенный режим (для отладки и потоковой передачи на ПК)</string>
+    <string name="action_settings">Настройки</string>
+    <string name="help_info"> <![CDATA[
+	 
+	    <h2>Об этом приложении</h2>
+	    <p>Это приложение является портом rtl_tcp на платформу android. Оно позволяет другим приложениям запускать rtl_tcp и использовать необработанные образцы I/Q, которые он считывает с 
+        USB DVB-T-донглов на базе чипа RTL2832U и Hack RF</p>
+	    <p>Это также позволяет Android осуществлять потоковую передачу по сети прямо из пользовательского интерфейса драйвера. Это продвинутая функция, и в ней могут быть ошибки.</p>
+		<h2>Примечания и лицензия</h2>
+		<p>Это приложение с открытым исходным кодом и лицензируется по GPL2+. Исходный код можно найти на <a href="https://github.com/signalwareltd/rtl_tcp_andro-">github.com/signalwareltd/rtl_tcp_andro-</a></p>
+        <p>Ссылка развилки на данный исходный код можно найти на <a href="https://github.com/Mr-Precise/rtl_tcp_android">Mr-Precise/rtl_tcp_android</a></p>
+		<p>Для получения подробной информации о лицензии используйте кнопку Лицензия.</p>
+		<h2>Включено программное обеспечение с открытым исходным кодом</h2>
+		<p>Модифицированная версия librtlsdr <a href="https://github.com/Mr-Precise/rtl-sdr">github.com/Mr-Precise/rtl-sdr</a></p>
+		<p>Модифицированная версия libusb <a href="http://libusb.info/">libusb.info</a></p>
+		<p>Модифицированная версия hackrf_android <a href="https://github.com/demantz/hackrf_android">github.com/demantz/hackrf_android</a></p>
+        <p>Модифицированная версия libhackrf <a href="https://github.com/mossmann/hackrf/tree/master/host/libhackrf">github.com/mossmann/libhackrf</a></p>
+	]]></string>
+</resources>
