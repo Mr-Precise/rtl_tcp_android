@@ -1,13 +1,10 @@
 
 <resources>
 
-    <string name="app_name">Rtl-sdr driver</string>
-    <string name="sdr_tcp_exec">sdr_tcp</string>
+    <string name="app_name">rtl-sdr nohwmod driver</string>
 	<string name="help">Hjelp</string>
 	<string name="stream">Begynn strømmen</string>
-	<string name="kill">Full stopp</string>
 	<string name="args_hint">sdr_tcp-ledetekstargumenter</string>
-	<string name="default_args">-a 0.0.0.0 -p 14423 -f 91800000 -s 1024000</string>
 	<string name="copy">Kopier</string>
 	<string name="copied_to_clip">Utdataen ble kopiert til utklippstavlen</string>
 	<string name="clear">Tøm</string>
@@ -16,8 +13,6 @@
 	<string name="notsupported">Den påkrevde handlingen ble ikke iverksatt, fordi den ikke var tilgjengelig.</string>
 
 	<string name="choose_device">Enhetsvelger</string>
-	
-	<string name="btn_ok">OK</string>
 
     <string name="license">Lisens</string>
 	<string name="help_info"> <![CDATA[

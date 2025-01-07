@@ -1,12 +1,12 @@
 <resources>
 
-    <string name="app_name">Rtl-sdr driver</string>
-    <string name="sdr_tcp_exec">sdr_tcp</string>
+    <string name="app_name">rtl-sdr nohwmod driver</string>
+    <string name="sdr_tcp_exec" translatable="false">sdr_tcp</string>
 	<string name="help">Help</string>
 	<string name="stream">Start stream</string>
-	<string name="kill">Kill</string>
+	<string name="kill" translatable="false">Kill</string>
 	<string name="args_hint">sdr_tcp command line arguments</string>
-	<string name="default_args">-a 0.0.0.0 -p 14423 -f 91800000 -s 1024000 -T 0</string>
+	<string name="default_args" translatable="false">-a 0.0.0.0 -p 14423 -f 91800000 -s 1024000 -T 0</string>
 	<string name="copy">Copy</string>
 	<string name="copied_to_clip">Output was copied to clipboard</string>
 	<string name="clear">Clear</string>
@@ -16,7 +16,7 @@
 
 	<string name="choose_device">Device Chooser</string>
 	
-	<string name="btn_ok">OK</string>
+	<string name="btn_ok" translatable="false">OK</string>
 
     <string name="license">License</string>
 	<string name="help_info"> <![CDATA[
@@ -30,7 +30,7 @@
 		<p>This app is open source and is licensed under GPL2+. The source code could be found on <a href="https://github.com/signalwareltd/rtl_tcp_andro-">github.com/signalwareltd/rtl_tcp_andro-</a></p>
 		<p>For detailed information about the license, use the License button.</p>
 		<h2>Included open source software</h2>
-		<p>Modified version of librtlsdr <a href="http://sdr.osmocom.org/trac/wiki/rtl-sdr">sdr.osmocom.org/trac/wiki/rtl-sdr</a></p>
+		<p>Modified version of librtlsdr <a href="https://github.com/Mr-Precise/rtl-sdr">github.com/Mr-Precise/rtl-sdr</a></p>
 		<p>Modified version of libusb <a href="http://libusb.info/">libusb.info</a></p>
 		<p>Modified version of hackrf_android <a href="https://github.com/demantz/hackrf_android">github.com/demantz/hackrf_android</a></p>
         <p>Modified version of libhackrf <a href="https://github.com/mossmann/hackrf/tree/master/host/libhackrf">github.com/mossmann/libhackrf</a></p>
