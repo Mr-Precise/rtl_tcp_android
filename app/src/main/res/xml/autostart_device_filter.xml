@@ -25,6 +25,8 @@
     <!-- rtl-sdr -->
     <usb-device vendor-id="0x0bda" product-id="0x2832"/> <!-- Generic RTL2832U-->
     <usb-device vendor-id="0x0bda" product-id="0x2838"/> <!-- Generic RTL2832U OEM-->
+    <usb-device vendor-id="0x1209" product-id="0x2832"/> <!-- SDR RTL2832U-->
+    <usb-device vendor-id="0x1209" product-id="0x2838"/> <!-- SDR RTL2832U-->
     <usb-device vendor-id="0x0413" product-id="0x6680"/> <!-- DigitalNow Quad DVB-T PCI-E card-->
     <usb-device vendor-id="0x0413" product-id="0x6f0f"/> <!-- Leadtek WinFast DTV Dongle mini D-->
     <usb-device vendor-id="0x0458" product-id="0x707f"/> <!-- Genius TVGo DVB-T03 USB dongle (Ver. B)-->
