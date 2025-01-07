@@ -1,6 +1,9 @@
 ### This is a **Fork** "rtl_tcp port for Android" with modified rtl-sdr library by [Mr-Precise/rtl-sdr](https://github.com/Mr-Precise/rtl-sdr)  
-* **Bugs from this fork should be reported** [**here**](https://github.com/Mr-Precise/rtl_tcp_android/issues), not to the original author.
-* Original author [**github.com/signalwareltd/rtl_tcp_andro-**](https://github.com/signalwareltd/rtl_tcp_andro-) 
+* **Bugs from this fork should be reported** [**here**](https://github.com/Mr-Precise/rtl_tcp_android/issues), not to the original author. Original author [**github.com/signalwareltd/rtl_tcp_andro-**](https://github.com/signalwareltd/rtl_tcp_andro-)  
+
+* Experimental R820T/R820T2 rtl-sdr tuner driver that tunes down to 13 MHz or lower.
+* The main possibilities and features are described here: [Mr-Precise/rtl-sdr](https://github.com/Mr-Precise/rtl-sdr)
+* Added more translations
 
 ## Usage
 
@@ -66,7 +69,7 @@ If you want to control the tuner, such as set the central frequency, you can sen
 * [MagicSDR](https://play.google.com/store/apps/details?id=com.sdr_labs.magicsdr)
 * [ADSB Flight Tracker](https://play.google.com/store/apps/details?id=com.enthusiasticcoder.adsbflightmonitor)
 * [Dump1090](https://play.google.com/store/apps/details?id=eu.ebctech.dump1090)
-
+* [SDR++](https://github.com/AlexandreRouma/SDRPlusPlus)  
 Open a github issue if you want your app to be featured here!
 
 # License
@@ -89,7 +92,7 @@ Files modified in libusb-1.0 to create libusb-andro:
 The modifications are released under GNU. See [COPYING](/COPYING) for details. 
  
 For more information on rtl-sdr: 
-http://sdr.osmocom.org/trac/wiki/rtl-sdr 
+https://github.com/Mr-Precise/rtl-sdr 
  
 For more information on libusb: 
 http://www.libusb.org/wiki/libusb-1.0
