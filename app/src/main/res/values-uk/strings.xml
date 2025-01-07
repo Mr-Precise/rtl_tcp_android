@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="warn_txt">Драйвер успішно встановлений! Будь ласка, запустіть програму хосту, і вона автоматично запустить драйвер.</string>
+    <string name="platform_not_supported">Ваша платформа Android не підтримується. Будь ласка, зв’яжіться з нами, щоб надати нам більше інформації про ваш пристрій, щоб ми могли підтримувати його в майбутньому.</string>
+    <string name="enable_gui">Увімкнути розширений режим (для налагодження та трансляції на ПК)</string>
+    <string name="copy">Копіювати</string>
+    <string name="copied_to_clip">Вихідні дані скопійовано в буфер обміну</string>
+    <string name="clear">Очистити</string>
+    <string name="error">Помилка</string>
+    <string name="notsupported">Потрібна дія не була виконана через те, що вона недоступна.</string>
+    <string name="choose_device">Вибір пристрою</string>
+    <string name="args_hint">аргументи командного рядка sdr_tcp</string>
+    <string name="help">Допомога</string>
+    <string name="stream">Почати трансляцію</string>
+    <string name="app_name">rtl-sdr nohwmod драйвер</string>
+    <string name="action_settings">Налаштування</string>
+    <string name="license">Ліцензія</string>
+    <string name="help_info"> <![CDATA[
+	 
+	    <h2>Про цей додаток</h2>
+	    <p>Ця програма є портом rtl_tcp на платформу Android. Це дозволяє іншим програмам запускати rtl_tcp і використовувати необроблені зразки I/Q, які він зчитує з USB-адаптера DVB-T на основі 
+        мікросхеми RTL2832U і Hack RF</p>
+	    <p>Це також дозволяє Android транслювати через мережу безпосередньо з інтерфейсу користувача драйвера. Це розширена функція, і в ній можуть бути помилки.</p>
+		<h2>Примітки та ліцензія</h2>
+		<p>Ця програма має відкритий код і ліцензована згідно з GPL2+. Вихідний код можна знайти на <a href="https://github.com/signalwareltd/rtl_tcp_andro-">github.com/signalwareltd/rtl_tcp_andro-</a></p>
+        <p>Посилання розвилки на цей вихідний код можна знайти на <a href="https://github.com/Mr-Precise/rtl_tcp_android">Mr-Precise/rtl_tcp_android</a></p>
+		<p>Для отримання детальної інформації про ліцензію скористайтеся кнопкою Ліцензія.</p>
+		<h2>Включає програмне забезпечення з відкритим кодом</h2>
+		<p>Модифікована версія librtlsdr <a href="https://github.com/Mr-Precise/rtl-sdr">github.com/Mr-Precise/rtl-sdr</a></p>
+		<p>Модифікована версія libusb <a href="http://libusb.info/">libusb.info</a></p>
+		<p>Модифікована версія hackrf_android <a href="https://github.com/demantz/hackrf_android">github.com/demantz/hackrf_android</a></p>
+        <p>Модифікована версія libhackrf <a href="https://github.com/mossmann/hackrf/tree/master/host/libhackrf">github.com/mossmann/libhackrf</a></p>
+	]]></string>
+</resources>
