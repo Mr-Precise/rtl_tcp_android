@@ -1,4 +1,8 @@
-# Usage
+### This is a **Fork** "rtl_tcp port for Android" with modified rtl-sdr library by [Mr-Precise/rtl-sdr](https://github.com/Mr-Precise/rtl-sdr)  
+* **Bugs from this fork should be reported** [**here**](https://github.com/Mr-Precise/rtl_tcp_android/issues), not to the original author.
+* Original author [**github.com/signalwareltd/rtl_tcp_andro-**](https://github.com/signalwareltd/rtl_tcp_andro-) 
+
+## Usage
 
 This driver implements an extension of the rtl-tcp protocol. It is fully compatible with any rtl-tcp capable client. However it also adds a number of additional commands that can allow Android clients to use the same API to control other SDR hardware devices such as the SDRplay or HackRF.
 
