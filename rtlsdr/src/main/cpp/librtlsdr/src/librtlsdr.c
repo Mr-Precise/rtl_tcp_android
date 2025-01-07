@@ -48,6 +48,7 @@
 #include "tuner_fc0012.h"
 #include "tuner_fc0013.h"
 #include "tuner_fc2580.h"
+#include "tuner_max2112.h"
 #include "tuner_r82xx.h"
 
 typedef struct rtlsdr_tuner_iface {
@@ -732,6 +733,7 @@ int rtlsdr_set_sample_freq_correction(rtlsdr_dev_t *dev, int ppm)
 	int r = 0;
 	uint8_t tmp;
 	int16_t offs = ppm * (-1) * TWO_POW(24) / 1000000;
+    rtlsdr_set_i2c_repeater(dev, 0);
 
 	tmp = offs & 0xff;
 	r |= rtlsdr_demod_write_reg(dev, 1, 0x3f, tmp, 1);
@@ -744,6 +746,7 @@ int rtlsdr_set_sample_freq_correction(rtlsdr_dev_t *dev, int ppm)
 int rtlsdr_set_xtal_freq(rtlsdr_dev_t *dev, uint32_t rtl_freq, uint32_t tuner_freq)
 {
 	int r = 0;
+    rtlsdr_set_i2c_repeater(dev, 0);
 
 	if (!dev)
 		return -1;
@@ -1018,6 +1021,8 @@ int rtlsdr_get_tuner_gains(rtlsdr_dev_t *dev, int *gains)
 				       63, 65, 67, 68, 70, 71, 179, 181, 182,
 				       184, 186, 188, 191, 197 };
 	const int fc2580_gains[] = { 0 /* no gain values */ };
+    const int max2112_gains[] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100,
+                                  110, 120, 130, 140, 150 }; /* TODO - these are just the IF gains */
 	const int r82xx_gains[] = { 0, 9, 14, 27, 37, 77, 87, 125, 144, 157,
 				     166, 197, 207, 229, 254, 280, 297, 328,
 				     338, 364, 372, 386, 402, 421, 434, 439,
@@ -1043,6 +1048,9 @@ int rtlsdr_get_tuner_gains(rtlsdr_dev_t *dev, int *gains)
 	case RTLSDR_TUNER_FC2580:
 		ptr = fc2580_gains; len = sizeof(fc2580_gains);
 		break;
+    case RTLSDR_TUNER_MAX2112:
+        ptr = max2112_gains; len = sizeof(max2112_gains);
+        break;
 	case RTLSDR_TUNER_R820T:
 	case RTLSDR_TUNER_R828D:
 		ptr = r82xx_gains; len = sizeof(r82xx_gains);
@@ -1335,6 +1343,14 @@ int rtlsdr_get_offset_tuning(rtlsdr_dev_t *dev)
 	return (dev->offs_freq) ? 1 : 0;
 }
 
+int rtlsdr_set_dithering(rtlsdr_dev_t *dev, int dither)
+{
+    if (dev->tuner_type == RTLSDR_TUNER_R820T) {
+        return r82xx_set_dither(&dev->r82xx_p, dither);
+    }
+    return 1;
+}
+
 static rtlsdr_dongle_t *find_known_device(uint16_t vid, uint16_t pid)
 {
 	unsigned int i;
@@ -1615,6 +1631,15 @@ int rtlsdr_open(rtlsdr_dev_t **out_dev, uint32_t index)
 		goto found;
 	}
 
+    reg = rtlsdr_i2c_read_reg(dev, MAX2112_I2C_ADDR, MAX2112_CHECK_ADDR);
+    if (reg == MAX2112_CHECK_VAL) {
+        fprintf(stderr, "Found Maxim MAX2112 tuner\n");
+        dev->tuner_type = RTLSDR_TUNER_MAX2112;
+        rtlsdr_set_gpio_output(dev, 7);
+        rtlsdr_set_gpio_bit(dev, 7, 1); // MUX to MAX2112
+        goto found;
+    }
+
 	reg = rtlsdr_i2c_read_reg(dev, R820T_I2C_ADDR, R82XX_CHECK_ADDR);
 	if (reg == R82XX_CHECK_VAL) {
 		fprintf(stderr, "Found Rafael Micro R820T tuner\n");
@@ -1674,6 +1699,12 @@ found:
         /* only enable In-phase ADC input */
         rtlsdr_demod_write_reg(dev, 0, 0x08, 0x4d, 1);
 
+        break;
+    case RTLSDR_TUNER_MAX2112:
+        /* enable RF AGC loop and Hold AAGC Value */
+        /* this keeps the MAX2112 RF gain low to reduce power consumption */
+        /* otherwise the default value causes the MAX2112 to overheat */
+        rtlsdr_demod_write_reg(dev, 1, 0x04, 0x60, 1);
         break;
 	case RTLSDR_TUNER_UNKNOWN:
 		fprintf(stderr, "No supported tuner found\n");
